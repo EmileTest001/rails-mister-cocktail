@@ -8,6 +8,7 @@ class CocktailsController < ApplicationController
   def show
     # inutile avec l'appel de #before_action
     # @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
   end
 
   def new

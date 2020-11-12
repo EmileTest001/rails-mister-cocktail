@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 
   root to: "cocktails#index"
 
-  resources :cocktails, only: [:index, :new, :create, :show]
+  # V1 MVC Cocktails
+  # resources :cocktails, only: [:index, :new, :create, :show]
 
-  # resources :cocktails, only: [:index, :new, :create, :show] do
-  #   resources :doses, only: [:new, :create]
-  # end
-
-  # resources :doses, only: [:index]
+  # V2 MVC Cocktails + nested Doses
+  resources :cocktails, only: [:index, :new, :create, :show] do
+    resources :doses, only: [:new, :create]
+  end
+  resources :doses, only: [:destroy]
 end
