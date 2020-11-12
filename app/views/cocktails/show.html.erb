@@ -1,9 +1,18 @@
+<!--
 <h1><%= @cocktail.name %> cocktail details</h1>
 <h3>app/views/cocktails/show.html.erb - cocktail.id =  <%= @cocktail.id %></h3>
+-->
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://asset.montecarlosbm.com/styles/hero_desktop_wide_responsive/s3/media/orphea/krl235_dcs_mocano_07_0160.jpg.jpeg);">
+  <div class="container">
+    <h1>Bloody Rails Bar</h1>
+    <p>Discover the Art of Cocktail</p>
+  </div>
+</div>
 
 <div class="container">
 
-  <h2>Dose</h2>
+  <h2>Dose for <%= @cocktail.name %> cocktail</h2>
   <div class="list-group">
     <% @cocktail.doses.each do |dose| %>
       <li class="list-group-item">
