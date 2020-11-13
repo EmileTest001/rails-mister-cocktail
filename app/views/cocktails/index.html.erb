@@ -2,15 +2,38 @@
 <h1>List of cocktails</h1>
 <h3>app/views/cocktails/index.html.erb</h3>
 app/assets/images/bar_banner.jpg
--->
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://asset.montecarlosbm.com/styles/hero_desktop_wide_responsive/s3/media/orphea/krl235_dcs_mocano_07_0160.jpg.jpeg);">
+app/assets/images/mocano.jpg
+app/views/cocktails/index.html.erb
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));">
   <div class="container">
     <h1><strong>Bloody Rails Bar</strong></h1>
     <p>Discover the Art of Cocktail</p>
   </div>
 </div>
+-->
 
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="/">Bloody Rails Bar</a>
+
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="ml-auto flex">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search"
+          value="">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-outline-primary my-2 my-sm-0" %>
+    </div>
+  </div>
+</nav>
+
+<!--
+<%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-outline-primary my-2 my-sm-0 ml-2" %>
+method: :get
+-->
+
+<!--
 <table>
   <thead>
     <tr>
@@ -19,13 +42,79 @@ app/assets/images/bar_banner.jpg
       <th colspan="2"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-      </tr>
+    <tr>
+      <td><%= cocktail.name %></td>
+      <td><%= link_to 'Show', cocktail %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
+-->
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <!-- <h2>All our Cocktails</h2> -->
+      <h2>Discover the Art of Cocktail</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p>....</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card">
+          <div class="card-cocktail">
+            <!--
+            <img src="media/images/dummy_cocktail_2.jpg" ; />
+            -->
+            <img src="https://static.750g.com/images/1200-630/8e0231c767effb7e0686d860050ae24f/thinkstockphotos-482482354.jpg" ; />
+            <h2><%= cocktail.name %></h2>
+            <%= link_to "More infos", cocktail_path(cocktail), class: "card-cocktail-action" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<!--
+
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <img src="https://www.saq.com/media/catalog/product/e/n/en-mode-cocktail-ec-1_1575333320.png" ; />
+            <div class="card-title">
+              <h2><%= cocktail.name %></h2>
+            </div>
+            <h2 class="card-cocktail-action">More info</h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+-->
+
+</div>

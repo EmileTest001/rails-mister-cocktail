@@ -11,9 +11,19 @@ require("channels")
 // 12.11.2020 import Boostrap JS library using webpack
 import 'bootstrap';
 
+// 13.11.2020 Select2 setup
+import { initSelect2 } from '../components/init_select2';
+document.addEventListener("turbolinks:load", function() {
+  initSelect2();
+});
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 //
 // const images = require.context('../images', true)
+// const imagePath = (name) => images(name, true)
+
+// 13.11.2020 => public/packs/media/images
+// const images = require.context('../../assets/images', true)
 // const imagePath = (name) => images(name, true)
