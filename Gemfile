@@ -53,4 +53,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 
 # 13.11.2020 Rails Day 5 - Upload to Cloudinary
+# gem for security
 gem 'dotenv-rails', groups: [:development, :test]
+# Cloudinary & Environment
+gem 'cloudinary', '~> 1.16.0'
