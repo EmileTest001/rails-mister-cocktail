@@ -51,3 +51,6 @@ gem 'rails-controller-testing', group: [ :test ]
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
+
+# 13.11.2020 Rails Day 5 - Upload to Cloudinary
+gem 'dotenv-rails', groups: [:development, :test]
