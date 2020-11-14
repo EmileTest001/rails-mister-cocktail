@@ -76,7 +76,12 @@ method: :get
             <img src="media/images/dummy_cocktail_2.jpg" ; />
             <img src="https://static.750g.com/images/1200-630/8e0231c767effb7e0686d860050ae24f/thinkstockphotos-482482354.jpg" ; />
             -->
-            <img src="<%= cocktail.picture_url %>" ; />
+            <% if cocktail.photo.attached? %>
+              <%= cl_image_tag cocktail.photo.key, crop: :fill %>
+            <% else %>
+              <img src="<%= cocktail.picture_url %>">
+            <% end %>
+
             <h2><%= cocktail.name %></h2>
             <%= link_to "More infos", cocktail_path(cocktail), class: "card-cocktail-action" %>
           </div>

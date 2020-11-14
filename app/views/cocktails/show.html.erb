@@ -7,7 +7,7 @@
 -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "mocano.jpg" %>');">
   <div class="container">
-    <h1>Bloody Rails Bar</h1>
+    <h1><a href="/"><i class="fas fa-glass-martini-alt"></i></a>Bloody Rails Bar</h1>
     <p>Discover the Art of Cocktail</p>
   </div>
 </div>
@@ -15,6 +15,13 @@
 <div class="container">
 
   <h2>Recipe for <%= @cocktail.name %> cocktail</h2>
+
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, height: 200, crop: :fill %>
+  <% else %>
+    <img src="<%= @cocktail.picture_url %>" height="200">
+  <% end %>
+
   <div class="list-group">
     <% @cocktail.doses.each do |dose| %>
       <li class="list-group-item d-flex justify-content-between align-items-center">
