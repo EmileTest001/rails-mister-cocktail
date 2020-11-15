@@ -2,7 +2,9 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show]
 
   def index
-    @cocktails = Cocktail.all
+    # @cocktails = Cocktail.all
+    # 15.11.2020 with "search a cocktail" feature
+    @cocktails = Cocktail.search(params[:search])
   end
 
   def show
@@ -32,6 +34,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :picture_url, :photo)
+    params.require(:cocktail).permit(:name, :picture_url, :photo, :search)
   end
 end
